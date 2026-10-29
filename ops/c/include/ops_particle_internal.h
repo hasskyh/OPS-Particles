@@ -72,6 +72,16 @@ void _ops_construct_local_box_from_dat(ops_dat coords, double  *grid_Size, int d
 /* Particle auxiliary functions                                                        */
 /*-------------------------------------------------------------------------------------*/
 
+// Added to get the lbm particle app working
+int local_decide_rebuild(const double *xPart, const double *xGrid, const double dx, const int dim);
+void get_coord_point_virtual_point(double *coords, int size[], int d_m[], int ilocal[], int dim, double *xold, double skin, int stag);
+void _remove_particle_from_bins(int address, int i, int *binhead, int *bins);
+int _virtual_within(int bin[], int bin_limits[], double *xpos, BoundingBox *box, int dim);
+void get_local_point(const int point, const int size[], const int d_m[], const int dim, int grid[]);
+void get_coord_point(const double *coords, const int size[],const int d_m[],
+                            const int ilocal[], const int dim, double *xlocal,
+                            double skin, int stag);
+
 template<typename T>
 void  _ops_particle_add_elem(int dim, T *x_local, ops_dat pos, int loc) {
   int size_dat = 1;
@@ -212,6 +222,7 @@ void _ops_particle_realloc_map_data(ops_particle_mapping map, size_t Np);
  * Mapping functions
  *--------------------------------------------------------------------------------------*/
 
+
 void  _ops_particle_build_local_uniform(ops_particle_mapping map, ops_particle particle);
 
 int _ops_particle_decide_build_local_uniform(ops_particle_mapping map,
@@ -261,6 +272,7 @@ void _ops_particle_exchange_map_update(ops_particle particle);
 /*--------------------------------------------------------------------------------------*/
 /* Mapping auxiliary functions                                                          */
 /*--------------------------------------------------------------------------------------*/
+
 
 void _ops_get_max_min(double &minv, double &maxv, const double* dat, const size_t size);
 

@@ -6,6 +6,10 @@
  */
 
 
+#include "ops_lib_core.h"
+#include "ops_particles_lib_core.h"
+#include "ops_particle_internal.h"
+
 //TODO: We need to add herein what it builds (local or all)
 int _ops_particle_decide_build_local_uniform(ops_particle_mapping map,
                                              ops_particle particle) {

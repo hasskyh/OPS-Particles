@@ -6,6 +6,9 @@
  */
 
 
+#include "ops_lib_core.h"
+#include "ops_particles_lib_core.h"
+
 void _ops_particle_halo_border_transfer(OPS_instance *instance,
                                         ops_particle_halo_group halo_grp) {
 

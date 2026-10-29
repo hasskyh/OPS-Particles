@@ -1,0 +1,143 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"build_ops_c_sample"
+		],
+		"files" : 
+		[
+			"apps/c/CMakeLists.txt",
+			"apps/c/CloverLeaf_3D/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 632,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 636,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 696,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 697,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 698,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 699,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf_3D",
+			"paths" : 
+			[
+				"build/apps/c/CloverLeaf_3D/tmp/user_types.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf_3D",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf_3D/clover.in",
+				"apps/c/CloverLeaf_3D/clover_bm.in",
+				"apps/c/CloverLeaf_3D/clover_bm1s.in",
+				"apps/c/CloverLeaf_3D/clover_bm1s_short.in",
+				"apps/c/CloverLeaf_3D/clover_bm_short.in"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf_3D",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf_3D/clover_leaf_3D_dev_seq.exe"
+			],
+			"targetId" : "clover_leaf_3D_dev_seq::@a74fdf1eaecfdba42846",
+			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf_3D",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf_3D/clover_leaf_3D_seq.exe"
+			],
+			"targetId" : "clover_leaf_3D_seq::@a74fdf1eaecfdba42846",
+			"targetIndex" : 2,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf_3D",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf_3D/clover_leaf_3D_openmp.exe"
+			],
+			"targetId" : "clover_leaf_3D_openmp::@a74fdf1eaecfdba42846",
+			"targetIndex" : 1,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf_3D",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf_3D/clover_leaf_3D_tiled.exe"
+			],
+			"targetId" : "clover_leaf_3D_tiled::@a74fdf1eaecfdba42846",
+			"targetIndex" : 3,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "apps/c/CloverLeaf_3D",
+		"source" : "apps/c/CloverLeaf_3D"
+	}
+}

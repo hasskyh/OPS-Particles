@@ -1,0 +1,155 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"build_ops_c_sample"
+		],
+		"files" : 
+		[
+			"apps/c/CMakeLists.txt",
+			"apps/c/CloverLeaf/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 632,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 636,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 647,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 696,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 697,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 698,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 699,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf",
+			"paths" : 
+			[
+				"build/apps/c/CloverLeaf/tmp/user_types.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf/clover.in",
+				"apps/c/CloverLeaf/clover_bm.in",
+				"apps/c/CloverLeaf/clover_bm16.in",
+				"apps/c/CloverLeaf/clover_bm16_short.in",
+				"apps/c/CloverLeaf/clover_bm_short.in",
+				"apps/c/CloverLeaf/clover_tiling.in"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"type" : "code"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf/clover_leaf_dev_seq.exe"
+			],
+			"targetId" : "clover_leaf_dev_seq::@3868781fdfbeea8d84cd",
+			"targetIndex" : 4,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf/clover_leaf_seq.exe"
+			],
+			"targetId" : "clover_leaf_seq::@3868781fdfbeea8d84cd",
+			"targetIndex" : 6,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf/clover_leaf_openmp.exe"
+			],
+			"targetId" : "clover_leaf_openmp::@3868781fdfbeea8d84cd",
+			"targetIndex" : 5,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/clover_leaf",
+			"paths" : 
+			[
+				"apps/c/CloverLeaf/clover_leaf_tiled.exe"
+			],
+			"targetId" : "clover_leaf_tiled::@3868781fdfbeea8d84cd",
+			"targetIndex" : 7,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "apps/c/CloverLeaf",
+		"source" : "apps/c/CloverLeaf"
+	}
+}

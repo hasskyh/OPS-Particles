@@ -85,7 +85,7 @@ void BoundingBox::partitionBoundingBox(ops_block block, ops_dat map_bin) {
 }
 
 
-static int local_decide_rebuild(const double *xPart, const double *xGrid, const double dx,
+int local_decide_rebuild(const double *xPart, const double *xGrid, const double dx,
                                 const int dim) {
 
   for (int isou = 0; isou < dim; isou++)
@@ -97,7 +97,7 @@ static int local_decide_rebuild(const double *xPart, const double *xGrid, const 
   return 0;
 }
 
-static void get_local_point(const int point,const int size[],
+void get_local_point(const int point,const int size[],
                             const int d_m[],const int dim, int grid[]) {
   int address = point;
   for (int i = dim - 1; i >= 0; i--) {
@@ -124,7 +124,7 @@ static int get_address(const int point[], const int size[], const int d_m[],
   return address;
 }
 
-static void get_coord_point(const double *coords, const int size[],const int d_m[],
+void get_coord_point(const double *coords, const int size[],const int d_m[],
                             const int ilocal[], const int dim, double *xlocal,
                             double skin, int stag) {
 
@@ -175,7 +175,7 @@ static void get_coord_point(const double *coords, const int size[],const int d_m
 }
 
 
-static void get_coord_point_virtual_point(double *coords, int size[], int d_m[],
+void get_coord_point_virtual_point(double *coords, int size[], int d_m[],
                                           int ilocal[], int dim, double *xold,
                                           double skin, int stag) {
 
@@ -247,7 +247,7 @@ double dx[OPS_MAX_DIM];
 
 
 
-static void _remove_particle_from_bins(int address, int i, int *binhead, int *bins) {
+void _remove_particle_from_bins(int address, int i, int *binhead, int *bins) {
 
 
 
@@ -2998,104 +2998,105 @@ void _ops_particle_halo_border_transfer_vs(OPS_instance *instance,
   }
 }
 
-void _ops_particle_halo_border_transfer(OPS_instance *instance,
-                                        ops_particle_halo_group halo_grp) {
+// Removed to get the lbm particle app working
+// void _ops_particle_halo_border_transfer(OPS_instance *instance,
+//                                         ops_particle_halo_group halo_grp) {
 
-  //Construct sending
-  for (int ihalo = 0; ihalo < halo_grp->nhalos; ihalo++) {
-    ops_particle_halo  halo= halo_grp->halo_list[ihalo];
-    ops_particle_halo_exchange  info =  halo_grp->halo_info[ihalo];
+//   //Construct sending
+//   for (int ihalo = 0; ihalo < halo_grp->nhalos; ihalo++) {
+//     ops_particle_halo  halo= halo_grp->halo_list[ihalo];
+//     ops_particle_halo_exchange  info =  halo_grp->halo_info[ihalo];
 
-    ops_particle particle_from = halo->particle_from;
-    int dim = particle_from->block->dims;
+//     ops_particle particle_from = halo->particle_from;
+//     int dim = particle_from->block->dims;
 
-    int imin = 0;
-    int imax = (halo_grp->with_virtual != OPS_NO_VIRTUAL) ?
-        particle_from->no_particles + particle_from->no_virtual :
-                                      particle_from->no_particles;
+//     int imin = 0;
+//     int imax = (halo_grp->with_virtual != OPS_NO_VIRTUAL) ?
+//         particle_from->no_particles + particle_from->no_virtual :
+//                                       particle_from->no_particles;
 
-    BoundingBox *box = halo->sendBox;
-    info->nsend = 0;
+//     BoundingBox *box = halo->sendBox;
+//     info->nsend = 0;
 
-    double *xlocal = (double *)particle_from->particle_pos_dat->data;
-    for (int i = imin; i < imax; i++) {
-      ops_point point{xlocal[dim * i], xlocal[dim * i + 1], (dim == 3) ?
-                      xlocal[dim * i + 2] : 0.0};
-
-
-      bool decide = box->isCoordinateInBoundingBox(point);
-      if (decide) {
-        info->nsend++;
-        if (info->nsend > info->nmax) {
-          info->nmax = info->nsend + OPS_MAX_PART;
-          info->sendlist = (int *) ops_realloc(info->sendlist,
-                                               info->nmax * sizeof(int));
-        }
-
-        info->sendlist[info->nsend - 1] = i;
-
-        /* Reallocatr buffer as well */
-        /* Ensure that buffer is large enough to receive data */
-        if (info->nsend * halo->nbites > instance->ops_halo_buffer_size) {
-          instance->ops_halo_buffer_size += (OPS_MAX_PART + info->nsend) * halo->nbites;
-          instance->ops_halo_buffer  = (char *)ops_realloc(instance->ops_halo_buffer,
-                                                           instance->ops_halo_buffer_size
-                                                           * sizeof(char));
-        }
-
-      }
-
-    }
-
-  }
-
-  //Upgrading recv information
-  for (int ihalo = 0; ihalo < halo_grp->nhalos; ihalo++) {
-    ops_particle_halo halo = halo_grp->halo_list[ihalo];
-    ops_particle_halo_exchange info = halo_grp->halo_info[ihalo];
+//     double *xlocal = (double *)particle_from->particle_pos_dat->data;
+//     for (int i = imin; i < imax; i++) {
+//       ops_point point{xlocal[dim * i], xlocal[dim * i + 1], (dim == 3) ?
+//                       xlocal[dim * i + 2] : 0.0};
 
 
-    ops_particle particle_to = halo->particle_to;
-    info->nrecv = info->nsend;
+//       bool decide = box->isCoordinateInBoundingBox(point);
+//       if (decide) {
+//         info->nsend++;
+//         if (info->nsend > info->nmax) {
+//           info->nmax = info->nsend + OPS_MAX_PART;
+//           info->sendlist = (int *) ops_realloc(info->sendlist,
+//                                                info->nmax * sizeof(int));
+//         }
 
-    //Compute location of first;
-    info->firstrecv = particle_to->no_particles + particle_to->no_virtual;
-    particle_to->no_virtual += info->nrecv;
-    //Realloc buffer lists -Only for MPI
-  }
+//         info->sendlist[info->nsend - 1] = i;
 
-  //Perform pack exchange
-  for (int ihalo = 0; ihalo < halo_grp-> nhalos; ihalo++) {
-    ops_particle_halo halo = halo_grp->halo_list[ihalo];
-    ops_particle_halo_exchange info = halo_grp->halo_info[ihalo];
+//         /* Reallocatr buffer as well */
+//         /* Ensure that buffer is large enough to receive data */
+//         if (info->nsend * halo->nbites > instance->ops_halo_buffer_size) {
+//           instance->ops_halo_buffer_size += (OPS_MAX_PART + info->nsend) * halo->nbites;
+//           instance->ops_halo_buffer  = (char *)ops_realloc(instance->ops_halo_buffer,
+//                                                            instance->ops_halo_buffer_size
+//                                                            * sizeof(char));
+//         }
 
-    for (int isend = 0; isend < info->nsend; isend++) {
-      int i = info->sendlist[isend];
-      _ops_particle_pack_halo_data(instance->ops_halo_buffer  + isend * halo->nbites,
-                                   halo->dat, halo->nhalos, i);
-    }
+//       }
 
-    ops_particle particle_to = halo->particle_to;
-    if (particle_to->no_particles + particle_to->no_virtual > particle_to->Nmax) {
-      ops_particle_realloc_data(particle_to, particle_to->no_particles + particle_to->no_virtual);
-    }
+//     }
 
+//   }
 
-    //npack data
-    for (int irecv = 0; irecv < info->nrecv; irecv++) {
-        int ifirst = info->firstrecv;
-        /* Realocation of particle data */
-        int iloc = ifirst + irecv;
-        _ops_particle_unpack_halo_data(instance->ops_halo_buffer  + irecv * halo->nbites,
-                                       halo->dat, halo->nhalos, iloc, halo->dir_to,
-                                       halo->dir_from, halo->translate); //TODO: check
-
-    }
+//   //Upgrading recv information
+//   for (int ihalo = 0; ihalo < halo_grp->nhalos; ihalo++) {
+//     ops_particle_halo halo = halo_grp->halo_list[ihalo];
+//     ops_particle_halo_exchange info = halo_grp->halo_info[ihalo];
 
 
-  }
+//     ops_particle particle_to = halo->particle_to;
+//     info->nrecv = info->nsend;
 
-}
+//     //Compute location of first;
+//     info->firstrecv = particle_to->no_particles + particle_to->no_virtual;
+//     particle_to->no_virtual += info->nrecv;
+//     //Realloc buffer lists -Only for MPI
+//   }
+
+//   //Perform pack exchange
+//   for (int ihalo = 0; ihalo < halo_grp-> nhalos; ihalo++) {
+//     ops_particle_halo halo = halo_grp->halo_list[ihalo];
+//     ops_particle_halo_exchange info = halo_grp->halo_info[ihalo];
+
+//     for (int isend = 0; isend < info->nsend; isend++) {
+//       int i = info->sendlist[isend];
+//       _ops_particle_pack_halo_data(instance->ops_halo_buffer  + isend * halo->nbites,
+//                                    halo->dat, halo->nhalos, i);
+//     }
+
+//     ops_particle particle_to = halo->particle_to;
+//     if (particle_to->no_particles + particle_to->no_virtual > particle_to->Nmax) {
+//       ops_particle_realloc_data(particle_to, particle_to->no_particles + particle_to->no_virtual);
+//     }
+
+
+//     //npack data
+//     for (int irecv = 0; irecv < info->nrecv; irecv++) {
+//         int ifirst = info->firstrecv;
+//         /* Realocation of particle data */
+//         int iloc = ifirst + irecv;
+//         _ops_particle_unpack_halo_data(instance->ops_halo_buffer  + irecv * halo->nbites,
+//                                        halo->dat, halo->nhalos, iloc, halo->dir_to,
+//                                        halo->dir_from, halo->translate); //TODO: check
+
+//     }
+
+
+//   }
+
+// }
 
 void _ops_particle_halo_border_pos_transfer(OPS_instance *instance,
                                             ops_particle_halo_group halo_grp) {

@@ -187,9 +187,11 @@ int removeDups(int a[], int array_size) {
 * Check if a file exists
 *******************************************************************************/
 int file_exist(char const *filename) {
-  struct stat buffer;
-  return (stat(filename, &buffer) == 0);
+  FILE *f = fopen(filename, "r");
+  if (f != NULL) { fclose(f); return 1; }
+  return 0;
 }
+
 
 /*******************************************************************************
 * Transpose an array, with potentially different padding - out has to be no smaller

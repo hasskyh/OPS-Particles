@@ -1,0 +1,3 @@
+C:\MSYS2\mingw64\bin\cmake.exe -E rm -f CMakeFiles\mb_shsgc_tiled.dir/objects.a
+C:\MSYS2\mingw64\bin\ar.exe qc CMakeFiles\mb_shsgc_tiled.dir/objects.a @CMakeFiles\mb_shsgc_tiled.dir\objects1.rsp
+C:\MSYS2\mingw64\bin\g++.exe  -O3 -fPIC -Wall -ffloat-store -g -std=c++11 -fopenmp -g -O0 -fPIC -Wall -ffloat-store -g -std=c++11 -Wl,--whole-archive CMakeFiles\mb_shsgc_tiled.dir/objects.a -Wl,--no-whole-archive -o mb_shsgc_tiled.exe -Wl,--out-implib,libmb_shsgc_tiled.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\mb_shsgc_tiled.dir\linkLibs.rsp

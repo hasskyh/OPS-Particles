@@ -5,20 +5,21 @@
 #include <cstdlib>
 #include <string.h>
 
-double OMEGA = 1.0;
-double rho0 = 1.0;
-double deltaUX = 10e-6;
-
 // Including main OPS header file, and setting 2D
+// OPS_2D must be defined BEFORE ops_seq_v2.h so that ops_lib_core.h
+// compiles the 2D operators into ACC<T>.
 #define OPS_2D
 #include <ops_seq_v2.h>
 #include <ops_particle_seq.h>
 #include "ops_particle_insert_del.h"
 
+double OMEGA = 1.0;
+double rho0 = 1.0;
+double deltaUX = 10e-6;
+
 // Including applicaiton-specific "elemental kernels"
 #include "lattice_kernels.h"
 #include "particle_kernels.h"
-
 
 static inline int mod(int v, int m) {
     int val = v%m;
@@ -28,7 +29,6 @@ static inline int mod(int v, int m) {
 
 void output_grid_dat(ops_dat *group, int ngroup, ops_particle particle,
                      int timestep) {
-
   //Assume rho, u, v
   std::string rho_out = "rho_timestep_" + std::to_string(timestep) + ".txt";
   std::string u_out = "u_timestep_" + std::to_string(timestep) + ".txt";
@@ -47,9 +47,6 @@ void  implement_bc(ops_block block, ops_dat f, ops_stencil S2D_00, int size[]) {
 
   double uw[] = {0.01, 0.};
   double zeros[] = {0., 0.};
-
-  //Bottom wall
-
 
   //Right wall
   int range_right[] = {size[0]-1, size[0], 1, size[1] - 1};
@@ -72,6 +69,7 @@ void  implement_bc(ops_block block, ops_dat f, ops_stencil S2D_00, int size[]) {
                ops_arg_dat(f, 9, S2D_00, "double", OPS_WRITE),
                ops_arg_gbl(uw, 2, "double", OPS_READ));
 
+  //Bottom wall
   int range_bot[] = {1, size[0]-1, 0, 1};
   ops_par_loop(Ker_Diffuse_Refl_Norm_yneg,"Ker_Diffuse_Refl_Norm_xneg", block, 2,
                range_bot,
@@ -181,9 +179,7 @@ void insert_particles(int ix, int iy, double box[], ops_particle particle,
 }
 
 void setup_maps(ops_particle particle) {
-
   ops_particle_build_maps(particle, true);
-
 }
 
 
@@ -350,14 +346,16 @@ int main(int argc, char ** argv) {
     //=================================================================
     //Insert particles into a grid and setup maps
     //=================================================================
-    int igrid[] = {1, 1};
-    double box_insert[] = {0.05, 0.95, 0.05, 0.95};
-    insert_particles(igrid[0], igrid[1], box_insert, particle,
+    int igrid[] = {4, 4};
+    double box[] = {0.05, 0.95, 0.05, 0.95};
+    insert_particles(igrid[0], igrid[1], box , particle,
                       particle_vel, map);
+
+
 
     //Build map
     setup_maps(particle);
-
+    
     output_grid_dat(group_out, 3, particle, 0);
 
 
@@ -367,7 +365,7 @@ int main(int argc, char ** argv) {
     //Start timer
     ops_timers(&ct0, &et0);
     // Main time loop
-    int Nsteps = 1000000;
+    int Nsteps = 500000;
     int nprint = 2000;
     for (int i = 0; i < Nsteps; i++) {
 

@@ -1,0 +1,209 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include",
+						"C:/MSYS2/mingw64/include",
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed"
+					],
+					"linkDirectories" : 
+					[
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0",
+						"C:/MSYS2/mingw64/lib/gcc",
+						"C:/MSYS2/mingw64/x86_64-w64-mingw32/lib",
+						"C:/MSYS2/mingw64/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"mingw32",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32",
+						"pthread",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32"
+					]
+				},
+				"path" : "C:/MSYS2/mingw64/bin/gcc.exe",
+				"version" : "12.2.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/MSYS2/mingw64/include/c++/12.2.0",
+						"C:/MSYS2/mingw64/include/c++/12.2.0/x86_64-w64-mingw32",
+						"C:/MSYS2/mingw64/include/c++/12.2.0/backward",
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include",
+						"C:/MSYS2/mingw64/include",
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed"
+					],
+					"linkDirectories" : 
+					[
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0",
+						"C:/MSYS2/mingw64/lib/gcc",
+						"C:/MSYS2/mingw64/x86_64-w64-mingw32/lib",
+						"C:/MSYS2/mingw64/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"stdc++",
+						"mingw32",
+						"gcc_s",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32",
+						"pthread",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"gcc_s",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32"
+					]
+				},
+				"path" : "C:/MSYS2/mingw64/bin/g++.exe",
+				"version" : "12.2.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/finclude",
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include",
+						"C:/MSYS2/mingw64/include",
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed"
+					],
+					"linkDirectories" : 
+					[
+						"C:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0",
+						"C:/MSYS2/mingw64/lib/gcc",
+						"C:/MSYS2/mingw64/x86_64-w64-mingw32/lib",
+						"C:/MSYS2/mingw64/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"gfortran",
+						"mingw32",
+						"gcc_s",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32",
+						"quadmath",
+						"m",
+						"mingw32",
+						"gcc_s",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32",
+						"pthread",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"gcc_s",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32"
+					]
+				},
+				"path" : "C:/MSYS2/mingw64/bin/gfortran.exe",
+				"version" : "12.2.0"
+			},
+			"language" : "Fortran",
+			"sourceFileExtensions" : 
+			[
+				"f",
+				"F",
+				"fpp",
+				"FPP",
+				"f77",
+				"F77",
+				"f90",
+				"F90",
+				"for",
+				"For",
+				"FOR",
+				"f95",
+				"F95"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "C:/MSYS2/mingw64/bin/windres.exe"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

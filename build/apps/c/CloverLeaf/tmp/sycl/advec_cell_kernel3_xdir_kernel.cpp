@@ -1,0 +1,294 @@
+// Auto-generated at 2026-10-29 00:13:52.312124 by ops-translator legacy
+
+
+//  ==================
+//  Host stub function
+//  ==================
+#ifndef OPS_LAZY
+void ops_par_loop_advec_cell_kernel3_xdir(
+    const char *name,
+    ops_block block,
+    int dim,
+    int* range,
+    ops_arg arg0, 
+    ops_arg arg1, 
+    ops_arg arg2, 
+    ops_arg arg3, 
+    ops_arg arg4, 
+    ops_arg arg5, 
+    ops_arg arg6, 
+    ops_arg arg7
+)
+{
+#else
+void ops_par_loop_advec_cell_kernel3_xdir_execute(ops_kernel_descriptor *desc)
+{
+    ops_block block = desc->block;
+    int dim = desc->dim;
+    int *range = desc->range;
+    ops_arg arg0 = desc->args[0];
+    ops_arg arg1 = desc->args[1];
+    ops_arg arg2 = desc->args[2];
+    ops_arg arg3 = desc->args[3];
+    ops_arg arg4 = desc->args[4];
+    ops_arg arg5 = desc->args[5];
+    ops_arg arg6 = desc->args[6];
+    ops_arg arg7 = desc->args[7];
+#endif
+
+//  ======
+//  Timing
+//  ======
+    double __t1,__t2,__c1,__c2;
+
+    ops_arg args[8];
+
+    args[0] = arg0;
+    args[1] = arg1;
+    args[2] = arg2;
+    args[3] = arg3;
+    args[4] = arg4;
+    args[5] = arg5;
+    args[6] = arg6;
+    args[7] = arg7;
+
+#if defined(CHECKPOINTING) && !defined(OPS_LAZY)
+    if (!ops_checkpointing_before(args,8, range, 5)) return;
+#endif
+
+    if (block->instance->OPS_diags > 1) {
+        ops_timing_realloc(block->instance, 5, "advec_cell_kernel3_xdir");
+        block->instance->OPS_kernels[5].count++;
+        ops_timers_core(&__c1, &__t1);
+    }
+
+#ifdef OPS_DEBUG
+    ops_register_args(block->instance, args, "advec_cell_kernel3_xdir");
+#endif
+
+//  =================================================
+//  compute locally allocated range for the sub-block
+//  =================================================
+    int start[2];
+    int end[2];
+#if defined(OPS_MPI) && !defined(OPS_LAZY)
+int arg_idx[2];
+#endif
+#if defined(OPS_LAZY) || !defined(OPS_MPI)
+    for (int n = 0; n < 2; n++) {
+        start[n] = range[2*n];
+        end[n]   = range[2*n+1];
+    }
+#else
+    if (compute_ranges(args, 8, block, range, start, end, arg_idx) < 0) return;
+#endif
+
+
+//  =====================================================
+//  Initialize global variable with the dimension of dats
+//  =====================================================
+    int xdim0_advec_cell_kernel3_xdir = args[0].dat->size[0];
+    int xdim1_advec_cell_kernel3_xdir = args[1].dat->size[0];
+    int xdim2_advec_cell_kernel3_xdir = args[2].dat->size[0];
+    int xdim3_advec_cell_kernel3_xdir = args[3].dat->size[0];
+    int xdim4_advec_cell_kernel3_xdir = args[4].dat->size[0];
+    int xdim5_advec_cell_kernel3_xdir = args[5].dat->size[0];
+    int xdim6_advec_cell_kernel3_xdir = args[6].dat->size[0];
+    int xdim7_advec_cell_kernel3_xdir = args[7].dat->size[0];
+
+//  =======================================================
+//  Set up initial pointers and exchange halos if necessary
+//  =======================================================
+    int base0 = args[0].dat->base_offset;
+    double * __restrict__ vol_flux_x_p = (double *)(args[0].data_d + base0);
+    int base1 = args[1].dat->base_offset;
+    double * __restrict__ pre_vol_p = (double *)(args[1].data_d + base1);
+    int base2 = args[2].dat->base_offset;
+    int * __restrict__ xx_p = (int *)(args[2].data_d + base2);
+    int base3 = args[3].dat->base_offset;
+    double * __restrict__ vertexdx_p = (double *)(args[3].data_d + base3);
+    int base4 = args[4].dat->base_offset;
+    double * __restrict__ density1_p = (double *)(args[4].data_d + base4);
+    int base5 = args[5].dat->base_offset;
+    double * __restrict__ energy1_p = (double *)(args[5].data_d + base5);
+    int base6 = args[6].dat->base_offset;
+    double * __restrict__ mass_flux_x_p = (double *)(args[6].data_d + base6);
+    int base7 = args[7].dat->base_offset;
+    double * __restrict__ ener_flux_p = (double *)(args[7].data_d + base7);
+
+#ifndef OPS_LAZY
+//  ==============
+//  Halo Exchanges
+//  ==============
+    ops_H_D_exchanges_device(args, 8);
+    ops_halo_exchanges(args,8,range);
+#endif
+
+    if (block->instance->OPS_diags > 1) {
+        ops_timers_core(&__c2, &__t2);
+        block->instance->OPS_kernels[5].mpi_time += __t2 - __t1;
+    }
+
+    int start_0 = start[0];
+    int end_0 = end[0];
+    int start_1 = start[1];
+    int end_1 = end[1];
+    if ((end[0]-start[0])>0 && (end[1]-start[1])>0) {
+        block->instance->sycl_instance->queue->submit([&](cl::sycl::handler &cgh) {
+
+          auto field_sycl = (*field_p).template get_access<cl::sycl::access::mode::read>(cgh);
+
+          cgh.parallel_for<class advec_cell_kernel3_xdir_kernel>(cl::sycl::nd_range<2>(cl::sycl::range<2>(
+               ((end[1]-start[1]-1)/block->instance->OPS_block_size_y+1)*block->instance->OPS_block_size_y,
+                ((end[0]-start[0]-1)/block->instance->OPS_block_size_x+1)*block->instance->OPS_block_size_x
+                 ),cl::sycl::range<2>(
+                 block->instance->OPS_block_size_y,
+          block->instance->OPS_block_size_x
+                 ))
+          , [=](cl::sycl::nd_item<2> item
+          ) [[intel::kernel_args_restrict]] {
+
+              int n_y = item.get_global_id()[0]+start_1;
+              int n_x = item.get_global_id()[1]+start_0;
+
+              const ACC<double> vol_flux_x(xdim0_advec_cell_kernel3_xdir, vol_flux_x_p + n_x*1 + n_y * xdim0_advec_cell_kernel3_xdir*1);
+              const ACC<double> pre_vol(xdim1_advec_cell_kernel3_xdir, pre_vol_p + n_x*1 + n_y * xdim1_advec_cell_kernel3_xdir*1);
+              const ACC<int> xx(xdim2_advec_cell_kernel3_xdir, xx_p + n_x*1 + n_y * xdim2_advec_cell_kernel3_xdir*0);
+              const ACC<double> vertexdx(xdim3_advec_cell_kernel3_xdir, vertexdx_p + n_x*1 + n_y * xdim3_advec_cell_kernel3_xdir*0);
+              const ACC<double> density1(xdim4_advec_cell_kernel3_xdir, density1_p + n_x*1 + n_y * xdim4_advec_cell_kernel3_xdir*1);
+              const ACC<double> energy1(xdim5_advec_cell_kernel3_xdir, energy1_p + n_x*1 + n_y * xdim5_advec_cell_kernel3_xdir*1);
+              ACC<double> mass_flux_x(xdim6_advec_cell_kernel3_xdir, mass_flux_x_p + n_x*1 + n_y * xdim6_advec_cell_kernel3_xdir*1);
+              ACC<double> ener_flux(xdim7_advec_cell_kernel3_xdir, ener_flux_p + n_x*1 + n_y * xdim7_advec_cell_kernel3_xdir*1);
+//  =========
+//  User code
+//  =========
+                if (n_x < end_0 && n_y < end_1) {
+                    
+
+  double sigmat, sigmav, sigmam, sigma3, sigma4;
+  double diffuw, diffdw, limiter;
+  double one_by_six = 1.0/6.0;
+
+  int x_max=field_sycl[0].x_max;
+
+  int upwind,donor,downwind,dif;
+
+
+
+
+
+
+  if(vol_flux_x(0,0) > 0.0) {
+    upwind   = -2;
+    donor    = -1;
+    downwind = 0;
+    dif      = donor;
+  }
+  else if (xx(1,0) < x_max+2-2) {
+    upwind   = 1;
+    donor    = 0;
+    downwind = -1;
+    dif      = upwind;
+  } else {
+    upwind   = 0;
+    donor    = 0;
+    downwind = -1;
+    dif      = upwind;
+  }
+
+
+  sigmat = cl::sycl::fabs(vol_flux_x(0,0))/pre_vol(donor,0);
+  sigma3 = (1.0 + sigmat)*(vertexdx(0,0)/vertexdx(dif,0));
+  sigma4 = 2.0 - sigmat;
+
+  sigmav = sigmat;
+
+  diffuw = density1(donor,0) - density1(upwind,0);
+  diffdw = density1(downwind,0) - density1(donor,0);
+
+  if( (diffuw*diffdw) > 0.0)
+    limiter=(1.0 - sigmav) * SIGN(1.0 , diffdw) *
+    MIN( MIN(cl::sycl::fabs(diffuw), cl::sycl::fabs(diffdw)),
+    one_by_six * (sigma3*cl::sycl::fabs(diffuw) + sigma4 * cl::sycl::fabs(diffdw)));
+  else
+    limiter=0.0;
+
+  mass_flux_x(0,0) = (vol_flux_x(0,0)) * ( density1(donor,0) + limiter );
+
+  sigmam = cl::sycl::fabs(mass_flux_x(0,0))/( density1(donor,0) * pre_vol(donor,0));
+  diffuw = energy1(donor,0) - energy1(upwind,0);
+  diffdw = energy1(downwind,0) - energy1(donor,0);
+
+  if( (diffuw*diffdw) > 0.0)
+    limiter = (1.0 - sigmam) * SIGN(1.0,diffdw) *
+    MIN( MIN(cl::sycl::fabs(diffuw), cl::sycl::fabs(diffdw)),
+    one_by_six * (sigma3 * cl::sycl::fabs(diffuw) + sigma4 * cl::sycl::fabs(diffdw)));
+  else
+    limiter=0.0;
+
+  ener_flux(0,0) = mass_flux_x(0,0) * ( energy1(donor,0) + limiter );
+
+                }
+            });
+        });
+    }
+
+    if (block->instance->OPS_diags > 1) {
+        block->instance->sycl_instance->queue->wait();
+        ops_timers_core(&__c1, &__t1);
+        block->instance->OPS_kernels[5].time += __t1 -__t2;
+    }
+
+#ifndef OPS_LAZY
+    ops_set_dirtybit_device(args, 8);
+    ops_set_halo_dirtybit3(&args[6], range);
+    ops_set_halo_dirtybit3(&args[7], range);
+#endif
+
+    if (block->instance->OPS_diags > 1) {
+//  ====================
+//  Update kernel record
+//  ====================
+    ops_timers_core(&__c2, &__t2);
+    block->instance->OPS_kernels[5].mpi_time += __t2 -__t1;
+    block->instance->OPS_kernels[5].transfer += ops_compute_transfer(dim, start, end, &arg0);
+    block->instance->OPS_kernels[5].transfer += ops_compute_transfer(dim, start, end, &arg1);
+    block->instance->OPS_kernels[5].transfer += ops_compute_transfer(dim, start, end, &arg2);
+    block->instance->OPS_kernels[5].transfer += ops_compute_transfer(dim, start, end, &arg3);
+    block->instance->OPS_kernels[5].transfer += ops_compute_transfer(dim, start, end, &arg4);
+    block->instance->OPS_kernels[5].transfer += ops_compute_transfer(dim, start, end, &arg5);
+    block->instance->OPS_kernels[5].transfer += ops_compute_transfer(dim, start, end, &arg6);
+    block->instance->OPS_kernels[5].transfer += ops_compute_transfer(dim, start, end, &arg7);
+}
+}
+
+#ifdef OPS_LAZY
+void ops_par_loop_advec_cell_kernel3_xdir(
+    const char *name,
+    ops_block block,
+    int dim,
+    int* range,
+    ops_arg arg0,
+    ops_arg arg1,
+    ops_arg arg2,
+    ops_arg arg3,
+    ops_arg arg4,
+    ops_arg arg5,
+    ops_arg arg6,
+    ops_arg arg7
+  )
+{
+    ops_arg args[8];
+
+    args[0] = arg0;
+    args[1] = arg1;
+    args[2] = arg2;
+    args[3] = arg3;
+    args[4] = arg4;
+    args[5] = arg5;
+    args[6] = arg6;
+    args[7] = arg7;
+
+    create_kerneldesc_and_enque("advec_cell_kernel3_xdir", args, 8, 5, dim, 1, range, block, ops_par_loop_advec_cell_kernel3_xdir_execute);
+}
+#endif

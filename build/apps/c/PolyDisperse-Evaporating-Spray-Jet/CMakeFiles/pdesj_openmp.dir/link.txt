@@ -1,0 +1,3 @@
+C:\MSYS2\mingw64\bin\cmake.exe -E rm -f CMakeFiles\pdesj_openmp.dir/objects.a
+C:\MSYS2\mingw64\bin\ar.exe qc CMakeFiles\pdesj_openmp.dir/objects.a @CMakeFiles\pdesj_openmp.dir\objects1.rsp
+C:\MSYS2\mingw64\bin\g++.exe  -O3 -fPIC -Wall -ffloat-store -g -std=c++11 -fopenmp -g -O0 -fPIC -Wall -ffloat-store -g -std=c++11 -Wl,--whole-archive CMakeFiles\pdesj_openmp.dir/objects.a -Wl,--no-whole-archive -o pdesj_openmp.exe -Wl,--out-implib,libpdesj_openmp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\pdesj_openmp.dir\linkLibs.rsp

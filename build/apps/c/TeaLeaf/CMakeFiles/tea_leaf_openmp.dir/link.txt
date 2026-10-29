@@ -1,0 +1,3 @@
+C:\MSYS2\mingw64\bin\cmake.exe -E rm -f CMakeFiles\tea_leaf_openmp.dir/objects.a
+C:\MSYS2\mingw64\bin\ar.exe qc CMakeFiles\tea_leaf_openmp.dir/objects.a @CMakeFiles\tea_leaf_openmp.dir\objects1.rsp
+C:\MSYS2\mingw64\bin\g++.exe  -O3 -fPIC -Wall -ffloat-store -g -std=c++11 -fopenmp -g -O0 -fPIC -Wall -ffloat-store -g -std=c++11 -Wl,--whole-archive CMakeFiles\tea_leaf_openmp.dir/objects.a -Wl,--no-whole-archive -o tea_leaf_openmp.exe -Wl,--out-implib,libtea_leaf_openmp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\tea_leaf_openmp.dir\linkLibs.rsp

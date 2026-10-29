@@ -1,0 +1,3 @@
+C:\MSYS2\mingw64\bin\cmake.exe -E rm -f CMakeFiles\lbm_particle_tiled.dir/objects.a
+C:\MSYS2\mingw64\bin\ar.exe qc CMakeFiles\lbm_particle_tiled.dir/objects.a @CMakeFiles\lbm_particle_tiled.dir\objects1.rsp
+C:\MSYS2\mingw64\bin\g++.exe  -O3 -fPIC -Wall -ffloat-store -g -std=c++11 -fopenmp -g -O0 -fPIC -Wall -ffloat-store -g -std=c++11 -Wl,--whole-archive CMakeFiles\lbm_particle_tiled.dir/objects.a -Wl,--no-whole-archive -o lbm_particle_tiled.exe -Wl,--out-implib,liblbm_particle_tiled.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\lbm_particle_tiled.dir\linkLibs.rsp

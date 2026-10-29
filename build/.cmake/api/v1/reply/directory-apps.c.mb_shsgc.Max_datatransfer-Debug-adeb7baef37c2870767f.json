@@ -1,0 +1,107 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"BUILD_OPS_C_SAMPLE"
+		],
+		"files" : 
+		[
+			"apps/c/CMakeLists.txt",
+			"apps/c/mb_shsgc/Max_datatransfer/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 696,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 697,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 698,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 699,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/mb_shsgc",
+			"paths" : 
+			[
+				"apps/c/mb_shsgc/Max_datatransfer/mb_shsgc_dev_seq.exe"
+			],
+			"targetId" : "mb_shsgc_dev_seq::@52ec12fd95fb5e132df2",
+			"targetIndex" : 20,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/mb_shsgc",
+			"paths" : 
+			[
+				"apps/c/mb_shsgc/Max_datatransfer/mb_shsgc_seq.exe"
+			],
+			"targetId" : "mb_shsgc_seq::@52ec12fd95fb5e132df2",
+			"targetIndex" : 22,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/mb_shsgc",
+			"paths" : 
+			[
+				"apps/c/mb_shsgc/Max_datatransfer/mb_shsgc_openmp.exe"
+			],
+			"targetId" : "mb_shsgc_openmp::@52ec12fd95fb5e132df2",
+			"targetIndex" : 21,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/mb_shsgc",
+			"paths" : 
+			[
+				"apps/c/mb_shsgc/Max_datatransfer/mb_shsgc_tiled.exe"
+			],
+			"targetId" : "mb_shsgc_tiled::@52ec12fd95fb5e132df2",
+			"targetIndex" : 23,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "apps/c/mb_shsgc/Max_datatransfer",
+		"source" : "apps/c/mb_shsgc/Max_datatransfer"
+	}
+}

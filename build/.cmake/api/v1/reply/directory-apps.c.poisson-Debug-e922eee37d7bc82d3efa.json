@@ -1,0 +1,123 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"build_ops_c_sample"
+		],
+		"files" : 
+		[
+			"apps/c/CMakeLists.txt",
+			"apps/c/poisson/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 632,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 696,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 697,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 698,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 699,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/poisson",
+			"paths" : 
+			[
+				"build/apps/c/poisson/tmp/user_types.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/poisson",
+			"paths" : 
+			[
+				"apps/c/poisson/poisson_dev_seq.exe"
+			],
+			"targetId" : "poisson_dev_seq::@7098eb139688bf530511",
+			"targetIndex" : 29,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/poisson",
+			"paths" : 
+			[
+				"apps/c/poisson/poisson_seq.exe"
+			],
+			"targetId" : "poisson_seq::@7098eb139688bf530511",
+			"targetIndex" : 31,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/poisson",
+			"paths" : 
+			[
+				"apps/c/poisson/poisson_openmp.exe"
+			],
+			"targetId" : "poisson_openmp::@7098eb139688bf530511",
+			"targetIndex" : 30,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/poisson",
+			"paths" : 
+			[
+				"apps/c/poisson/poisson_tiled.exe"
+			],
+			"targetId" : "poisson_tiled::@7098eb139688bf530511",
+			"targetIndex" : 32,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "apps/c/poisson",
+		"source" : "apps/c/poisson"
+	}
+}

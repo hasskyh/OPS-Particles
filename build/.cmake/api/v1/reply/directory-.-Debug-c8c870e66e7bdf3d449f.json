@@ -1,0 +1,97 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 286,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 321,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				"ops/c/include/ops_checkpointing.h",
+				"ops/c/include/ops_cuda_reduction.h",
+				"ops/c/include/ops_cuda_rt_support.h",
+				"ops/c/include/ops_device_rt_support.h",
+				"ops/c/include/ops_distributions.h",
+				"ops/c/include/ops_exceptions.h",
+				"ops/c/include/ops_grid_part_seq.h",
+				"ops/c/include/ops_grid_part_seq_init.h",
+				"ops/c/include/ops_grid_part_seq_v2.h",
+				"ops/c/include/ops_hdf5.h",
+				"ops/c/include/ops_hdf5_common.h",
+				"ops/c/include/ops_hip_reduction.h",
+				"ops/c/include/ops_hip_rt_support.h",
+				"ops/c/include/ops_insert_random_particles.h",
+				"ops/c/include/ops_instance.h",
+				"ops/c/include/ops_internal1.h",
+				"ops/c/include/ops_internal2.h",
+				"ops/c/include/ops_lib_core.h",
+				"ops/c/include/ops_macros.h",
+				"ops/c/include/ops_mpi_core.h",
+				"ops/c/include/ops_mpi_particle_core.h",
+				"ops/c/include/ops_opencl_reduction.h",
+				"ops/c/include/ops_opencl_rt_support.h",
+				"ops/c/include/ops_particle_grid_seq.h",
+				"ops/c/include/ops_particle_insert_del.h",
+				"ops/c/include/ops_particle_internal.h",
+				"ops/c/include/ops_particle_seq.h",
+				"ops/c/include/ops_particle_seq_original.h",
+				"ops/c/include/ops_particle_seq_v1.h",
+				"ops/c/include/ops_particles_lib_core.h",
+				"ops/c/include/ops_seq.h",
+				"ops/c/include/ops_seq_v2.h",
+				"ops/c/include/ops_sequential_support.h",
+				"ops/c/include/ops_sycl_reduction.h",
+				"ops/c/include/ops_sycl_rt_support.h",
+				"ops/c/include/ops_tridiag.h",
+				"ops/c/include/ops_util.h",
+				"ops/c/include/queue.h",
+				"ops/fortran/include/ops_macros.inc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/OPS/lib/cmake",
+			"paths" : 
+			[
+				"build/OPSConfig.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

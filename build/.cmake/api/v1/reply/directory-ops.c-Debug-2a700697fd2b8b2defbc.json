@@ -1,0 +1,76 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"installtarget"
+		],
+		"files" : 
+		[
+			"ops/c/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 36,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 17,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 25,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"ops/c/libops_seq.a"
+			],
+			"targetId" : "ops_seq::@8bde0a04807356ea23ad",
+			"targetIndex" : 24,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/OPS/lib/cmake",
+			"exportName" : "ops_seq_targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "ops_seq::@8bde0a04807356ea23ad",
+					"index" : 24
+				}
+			],
+			"paths" : 
+			[
+				"ops/c/CMakeFiles/Export/9d685630aa8d8dd71ea0117add611346/ops_seq_targets.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "ops/c",
+		"source" : "ops/c"
+	}
+}

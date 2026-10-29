@@ -1,0 +1,632 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-c8c870e66e7bdf3d449f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "ops_translator_legacy",
+					"jsonFile" : "directory-ops_translator_legacy-Debug-4df8cd17441afc957fc3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "ops_translator_legacy"
+				},
+				{
+					"build" : "ops/c",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-ops.c-Debug-2a700697fd2b8b2defbc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "ops/c",
+					"targetIndexes" : 
+					[
+						24
+					]
+				},
+				{
+					"build" : "apps/c",
+					"childIndexes" : 
+					[
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						11,
+						12,
+						13
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c-Debug-1ec25ea4d4a0ca47efa7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "apps/c"
+				},
+				{
+					"build" : "apps/c/poisson",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.poisson-Debug-e922eee37d7bc82d3efa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/poisson",
+					"targetIndexes" : 
+					[
+						29,
+						30,
+						31,
+						32
+					]
+				},
+				{
+					"build" : "apps/c/laplace2d_tutorial/step7",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.laplace2d_tutorial.step7-Debug-23d234d6613f8e12bb6e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/laplace2d_tutorial/step7",
+					"targetIndexes" : 
+					[
+						8,
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "apps/c/CloverLeaf",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.CloverLeaf-Debug-f2677ff01f7f74b2d3db.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/CloverLeaf",
+					"targetIndexes" : 
+					[
+						4,
+						5,
+						6,
+						7
+					]
+				},
+				{
+					"build" : "apps/c/CloverLeaf_3D",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.CloverLeaf_3D-Debug-7689a909754d1c0dc61e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/CloverLeaf_3D",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "apps/c/TeaLeaf",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.TeaLeaf-Debug-449f0ecaf876f986c19a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/TeaLeaf",
+					"targetIndexes" : 
+					[
+						33,
+						34,
+						35,
+						36
+					]
+				},
+				{
+					"build" : "apps/c/mb_shsgc",
+					"childIndexes" : 
+					[
+						10
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.mb_shsgc-Debug-61dbdc965a13ce4480af.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/mb_shsgc"
+				},
+				{
+					"build" : "apps/c/mb_shsgc/Max_datatransfer",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.mb_shsgc.Max_datatransfer-Debug-adeb7baef37c2870767f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 3,
+					"source" : "apps/c/mb_shsgc/Max_datatransfer",
+					"targetIndexes" : 
+					[
+						20,
+						21,
+						22,
+						23
+					]
+				},
+				{
+					"build" : "apps/c/ops-lbm/step5",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.ops-lbm.step5-Debug-09a338218e92638a9c71.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/ops-lbm/step5",
+					"targetIndexes" : 
+					[
+						12,
+						13,
+						14,
+						15
+					]
+				},
+				{
+					"build" : "apps/c/LBM-cavity-2D-particle-tracking",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.LBM-cavity-2D-particle-tracking-Debug-2822ad87c2eda3fbe8c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/LBM-cavity-2D-particle-tracking",
+					"targetIndexes" : 
+					[
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "apps/c/PolyDisperse-Evaporating-Spray-Jet",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-apps.c.PolyDisperse-Evaporating-Spray-Jet-Debug-7350242afc6103c1e98c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "apps/c/PolyDisperse-Evaporating-Spray-Jet",
+					"targetIndexes" : 
+					[
+						25,
+						26,
+						27,
+						28
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OPS"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "OPS_TRANSLATOR",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "API",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						24
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13
+					],
+					"name" : "APP",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 7,
+					"id" : "clover_leaf_3D_dev_seq::@a74fdf1eaecfdba42846",
+					"jsonFile" : "target-clover_leaf_3D_dev_seq-Debug-14f357b99edd8d838e32.json",
+					"name" : "clover_leaf_3D_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "clover_leaf_3D_openmp::@a74fdf1eaecfdba42846",
+					"jsonFile" : "target-clover_leaf_3D_openmp-Debug-daf3b82c2a66c5b8c150.json",
+					"name" : "clover_leaf_3D_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "clover_leaf_3D_seq::@a74fdf1eaecfdba42846",
+					"jsonFile" : "target-clover_leaf_3D_seq-Debug-285821ed93554bd65973.json",
+					"name" : "clover_leaf_3D_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "clover_leaf_3D_tiled::@a74fdf1eaecfdba42846",
+					"jsonFile" : "target-clover_leaf_3D_tiled-Debug-72891d6c82e1e27c33bf.json",
+					"name" : "clover_leaf_3D_tiled",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "clover_leaf_dev_seq::@3868781fdfbeea8d84cd",
+					"jsonFile" : "target-clover_leaf_dev_seq-Debug-b7fda948e5d4ec48e006.json",
+					"name" : "clover_leaf_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "clover_leaf_openmp::@3868781fdfbeea8d84cd",
+					"jsonFile" : "target-clover_leaf_openmp-Debug-3e0c14b5d46f2b1e3464.json",
+					"name" : "clover_leaf_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "clover_leaf_seq::@3868781fdfbeea8d84cd",
+					"jsonFile" : "target-clover_leaf_seq-Debug-597e7ac60445cc231450.json",
+					"name" : "clover_leaf_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "clover_leaf_tiled::@3868781fdfbeea8d84cd",
+					"jsonFile" : "target-clover_leaf_tiled-Debug-30f5acb3777349e1530d.json",
+					"name" : "clover_leaf_tiled",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "laplace2d_dev_seq::@51eec12406333a5c8836",
+					"jsonFile" : "target-laplace2d_dev_seq-Debug-c8469fb904c3fc12b4a7.json",
+					"name" : "laplace2d_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "laplace2d_openmp::@51eec12406333a5c8836",
+					"jsonFile" : "target-laplace2d_openmp-Debug-b524f603114ca4d53d8d.json",
+					"name" : "laplace2d_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "laplace2d_seq::@51eec12406333a5c8836",
+					"jsonFile" : "target-laplace2d_seq-Debug-7db0bb280773d23a389b.json",
+					"name" : "laplace2d_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "laplace2d_tiled::@51eec12406333a5c8836",
+					"jsonFile" : "target-laplace2d_tiled-Debug-0170f17b7c110c0d1f2a.json",
+					"name" : "laplace2d_tiled",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "lattboltz2d_dev_seq::@121ae75182a80fa099d4",
+					"jsonFile" : "target-lattboltz2d_dev_seq-Debug-97c02b0764cd140c638f.json",
+					"name" : "lattboltz2d_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "lattboltz2d_openmp::@121ae75182a80fa099d4",
+					"jsonFile" : "target-lattboltz2d_openmp-Debug-5602345c447589006828.json",
+					"name" : "lattboltz2d_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "lattboltz2d_seq::@121ae75182a80fa099d4",
+					"jsonFile" : "target-lattboltz2d_seq-Debug-aece1c6e585e42f557ff.json",
+					"name" : "lattboltz2d_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "lattboltz2d_tiled::@121ae75182a80fa099d4",
+					"jsonFile" : "target-lattboltz2d_tiled-Debug-356760947c78a84fee2c.json",
+					"name" : "lattboltz2d_tiled",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "lbm_particle_dev_seq::@776fad8c971631cb26b8",
+					"jsonFile" : "target-lbm_particle_dev_seq-Debug-cd99511c36bc469cf488.json",
+					"name" : "lbm_particle_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "lbm_particle_openmp::@776fad8c971631cb26b8",
+					"jsonFile" : "target-lbm_particle_openmp-Debug-dbaee211082bd2e2709c.json",
+					"name" : "lbm_particle_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "lbm_particle_seq::@776fad8c971631cb26b8",
+					"jsonFile" : "target-lbm_particle_seq-Debug-855a12b486e4c1363b3e.json",
+					"name" : "lbm_particle_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "lbm_particle_tiled::@776fad8c971631cb26b8",
+					"jsonFile" : "target-lbm_particle_tiled-Debug-484b016393ce6fe3028c.json",
+					"name" : "lbm_particle_tiled",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "mb_shsgc_dev_seq::@52ec12fd95fb5e132df2",
+					"jsonFile" : "target-mb_shsgc_dev_seq-Debug-2ea901f420835b117d61.json",
+					"name" : "mb_shsgc_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "mb_shsgc_openmp::@52ec12fd95fb5e132df2",
+					"jsonFile" : "target-mb_shsgc_openmp-Debug-cf2d4bcf7ac19003b69c.json",
+					"name" : "mb_shsgc_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "mb_shsgc_seq::@52ec12fd95fb5e132df2",
+					"jsonFile" : "target-mb_shsgc_seq-Debug-3b29a6be8d668eba64f2.json",
+					"name" : "mb_shsgc_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "mb_shsgc_tiled::@52ec12fd95fb5e132df2",
+					"jsonFile" : "target-mb_shsgc_tiled-Debug-7fe45786efae8e067f86.json",
+					"name" : "mb_shsgc_tiled",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ops_seq::@8bde0a04807356ea23ad",
+					"jsonFile" : "target-ops_seq-Debug-d7e9f51164e92a844d66.json",
+					"name" : "ops_seq",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "pdesj_dev_seq::@c21115e56589bd3f88e8",
+					"jsonFile" : "target-pdesj_dev_seq-Debug-ce744bd3563b6e8224a0.json",
+					"name" : "pdesj_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "pdesj_openmp::@c21115e56589bd3f88e8",
+					"jsonFile" : "target-pdesj_openmp-Debug-72e2b03426a79b5406e4.json",
+					"name" : "pdesj_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "pdesj_seq::@c21115e56589bd3f88e8",
+					"jsonFile" : "target-pdesj_seq-Debug-ca9f72f3782d48d5670a.json",
+					"name" : "pdesj_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "pdesj_tiled::@c21115e56589bd3f88e8",
+					"jsonFile" : "target-pdesj_tiled-Debug-bc55d6975b619810cc12.json",
+					"name" : "pdesj_tiled",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "poisson_dev_seq::@7098eb139688bf530511",
+					"jsonFile" : "target-poisson_dev_seq-Debug-2008cf04fb9a7e00b3e7.json",
+					"name" : "poisson_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "poisson_openmp::@7098eb139688bf530511",
+					"jsonFile" : "target-poisson_openmp-Debug-1d1076cc04e6dec5e5b3.json",
+					"name" : "poisson_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "poisson_seq::@7098eb139688bf530511",
+					"jsonFile" : "target-poisson_seq-Debug-f421fbb9ff8cbae7e659.json",
+					"name" : "poisson_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "poisson_tiled::@7098eb139688bf530511",
+					"jsonFile" : "target-poisson_tiled-Debug-5716ae4ce11315cce52d.json",
+					"name" : "poisson_tiled",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "tea_leaf_dev_seq::@078bcae55a1249e747b2",
+					"jsonFile" : "target-tea_leaf_dev_seq-Debug-2fdb31be68d9bb78b233.json",
+					"name" : "tea_leaf_dev_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "tea_leaf_openmp::@078bcae55a1249e747b2",
+					"jsonFile" : "target-tea_leaf_openmp-Debug-030856d2014f0b988ffd.json",
+					"name" : "tea_leaf_openmp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "tea_leaf_seq::@078bcae55a1249e747b2",
+					"jsonFile" : "target-tea_leaf_seq-Debug-e35f2b9cf8187d6f5cdb.json",
+					"name" : "tea_leaf_seq",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "tea_leaf_tiled::@078bcae55a1249e747b2",
+					"jsonFile" : "target-tea_leaf_tiled-Debug-1db37ffc22ddb137b0c2.json",
+					"name" : "tea_leaf_tiled",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/44793/VScode/OPS/build",
+		"source" : "C:/Users/44793/VScode/OPS"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

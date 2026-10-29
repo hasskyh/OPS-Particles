@@ -1,0 +1,66 @@
+// Auto-generated at 2026-10-29 00:13:46.982086 by ops-translator legacy
+
+
+#ifdef OCL_FMA
+#pragma OPENCL FP_CONTRACT ON
+#else
+#pragma OPENCL FP_CONTRACT OFF
+#endif
+#pragma OPENCL EXTENSION cl_khr_fp64:enable
+
+#define OPS_2D
+#define OPS_API 2
+#define OPS_NO_GLOBALS
+#include "ops_macros.h"
+#include "ops_opencl_reduction.h"
+
+#ifndef MIN
+#define MIN(a,b) ((a<b) ? (a) : (b))
+#endif
+#ifndef MAX
+#define MAX(a,b) ((a>b) ? (a) : (b))
+#endif
+#ifndef SIGN
+#define SIGN(a,b) ((b<0.0) ? (a*(-1)) : (a))
+#endif
+#define OPS_READ 0
+#define OPS_WRITE 1
+#define OPS_RW 2
+#define OPS_INC 3
+#define OPS_MIN 4
+#define OPS_MAX 5
+
+//user function
+
+void left_bndcon(ptr_double A,
+  const int *idx, const int jmax, const double pi)
+{
+  OPS_ACCS(A, 0,0) = sin(pi * (idx[1]+1) / (jmax+1));
+}
+
+
+__kernel void ops_left_bndcon(
+__global double* restrict arg0,
+const int jmax,
+const double pi,
+const int base0,
+int arg_idx0, int arg_idx1,
+const int size0,
+const int size1 ){
+
+
+  int idx_y = get_global_id(1);
+  int idx_x = get_global_id(0);
+
+  int arg_idx[2];
+  arg_idx[0] = arg_idx0+idx_x;
+  arg_idx[1] = arg_idx1+idx_y;
+  if (idx_x < size0 && idx_y < size1) {
+      ptr_double ptr0 = { &arg0[base0 + idx_x * 1*1 + idx_y * 1*1 * xdim0_left_bndcon], xdim0_left_bndcon};
+      left_bndcon(ptr0,
+                     arg_idx,
+                     jmax,
+                     pi);
+  }
+
+}

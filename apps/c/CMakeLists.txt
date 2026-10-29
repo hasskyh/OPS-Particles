@@ -416,7 +416,7 @@
             )
         else()
             if(LEGACY_CODEGEN)
-                set(OPS_C_TRANSLATOR "${CMAKE_INSTALL_PREFIX}/translator/ops_translator_legacy/c/ops.py")
+                set(OPS_C_TRANSLATOR "${CMAKE_SOURCE_DIR}/ops_translator_legacy/c/ops.py")
                 set(OPS_F_TRANSLATOR "${CMAKE_INSTALL_PREFIX}/translator/ops_translator_legacy/fortran/ops_fortran.py")
             else()
                 set(OPS_C_TRANSLATOR "${CMAKE_INSTALL_PREFIX}/translator/ops_translator/ops-translator")
@@ -569,8 +569,8 @@
 
 #       Run OPS code-generation
         if(LEGACY_CODEGEN)
-            message(STATUS "Code-gen command: ${OPS_C_TRANSLATOR} ${DEV}")
-            execute_process(COMMAND ${OPS_C_TRANSLATOR} ${DEV}
+            message(STATUS "Code-gen command: ${Python3_EXECUTABLE} ${OPS_C_TRANSLATOR} ${DEV}")
+            execute_process(COMMAND ${Python3_EXECUTABLE} ${OPS_C_TRANSLATOR} ${DEV}
                             WORKING_DIRECTORY ${TMP_SOURCE_DIR}
                             RESULT_VARIABLE result
                             OUTPUT_VARIABLE output)
@@ -1011,6 +1011,12 @@
 
 #   App: ops-lbm    # Compiles OK
     add_subdirectory(ops-lbm/step5)
+
+#   App: lbm cavity
+    add_subdirectory(LBM-cavity-2D-particle-tracking)
+
+#   App: PolyDisperse evaporating spray jet
+    add_subdirectory(PolyDisperse-Evaporating-Spray-Jet)
 
 #   TODO there seem bugs in the codes of complex_numbers
 #   add_subdirectory(complex_numbers) TODO Need to figure out the structure

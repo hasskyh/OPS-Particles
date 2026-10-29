@@ -1,0 +1,72 @@
+// Auto-generated at 2026-10-29 00:14:12.596479 by ops-translator legacy
+
+
+#ifdef OCL_FMA
+#pragma OPENCL FP_CONTRACT ON
+#else
+#pragma OPENCL FP_CONTRACT OFF
+#endif
+#pragma OPENCL EXTENSION cl_khr_fp64:enable
+
+#define OPS_2D
+#define OPS_API 2
+#define OPS_NO_GLOBALS
+#include "ops_macros.h"
+#include "ops_opencl_reduction.h"
+
+#ifndef MIN
+#define MIN(a,b) ((a<b) ? (a) : (b))
+#endif
+#ifndef MAX
+#define MAX(a,b) ((a>b) ? (a) : (b))
+#endif
+#ifndef SIGN
+#define SIGN(a,b) ((b<0.0) ? (a*(-1)) : (a))
+#endif
+#define OPS_READ 0
+#define OPS_WRITE 1
+#define OPS_RW 2
+#define OPS_INC 3
+#define OPS_MIN 4
+#define OPS_MAX 5
+
+//user function
+
+void timeloop_eqM(const ptr_double ux,
+  const ptr_double uy,
+  double* energy) {
+
+    *energy = *energy + (OPS_ACCS(ux, 0,0)*OPS_ACCS(ux, 0,0) + OPS_ACCS(uy, 0,0)*OPS_ACCS(uy, 0,0));
+}
+
+
+__kernel void ops_timeloop_eqM(
+__global const double* restrict arg0,
+__global const double* restrict arg1,
+__global double* restrict arg2,
+__local double* scratch2,
+int r_bytes2,
+const int base0,
+const int base1,
+const int size0,
+const int size1 ){
+
+  arg2 += r_bytes2;
+  double arg2_l[1];
+  for (int d=0; d<1; d++) arg2_l[d] = ZERO_double;
+
+  int idx_y = get_global_id(1);
+  int idx_x = get_global_id(0);
+
+  if (idx_x < size0 && idx_y < size1) {
+      const ptr_double ptr0 = { &arg0[base0 + idx_x * 1*1 + idx_y * 1*1 * xdim0_timeloop_eqM], xdim0_timeloop_eqM};
+      const ptr_double ptr1 = { &arg1[base1 + idx_x * 1*1 + idx_y * 1*1 * xdim1_timeloop_eqM], xdim1_timeloop_eqM};
+      timeloop_eqM(ptr0,
+                      ptr1,
+                      arg2_l);
+  }
+  int group_index = get_group_id(0) + get_group_id(1)*get_num_groups(0)+ get_group_id(2)*get_num_groups(0)*get_num_groups(1);
+  for (int d=0; d<1; d++)
+    reduce_double(arg2_l[d], scratch2, &arg2[group_index*1+d], OPS_INC);
+
+}

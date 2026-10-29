@@ -1,0 +1,248 @@
+// Auto-generated at 2026-10-29 00:13:53.454191 by ops-translator legacy
+
+//header
+#define OPS_2D
+#define OPS_API 2
+#include "ops_lib_core.h"
+#ifdef OPS_MPI
+#include "ops_mpi_core.h"
+#include <limits>
+#endif
+#include "user_types.h"
+
+#include "ops_sycl_rt_support.h"
+#include "ops_sycl_reduction.h"
+// global constants
+cl::sycl::buffer<double,1> *g_small_p=nullptr;
+extern double g_small;
+cl::sycl::buffer<double,1> *g_big_p=nullptr;
+extern double g_big;
+cl::sycl::buffer<double,1> *dtc_safe_p=nullptr;
+extern double dtc_safe;
+cl::sycl::buffer<double,1> *dtu_safe_p=nullptr;
+extern double dtu_safe;
+cl::sycl::buffer<double,1> *dtv_safe_p=nullptr;
+extern double dtv_safe;
+cl::sycl::buffer<double,1> *dtdiv_safe_p=nullptr;
+extern double dtdiv_safe;
+cl::sycl::buffer<field_type,1> *field_p=nullptr;
+extern field_type field;
+cl::sycl::buffer<grid_type,1> *grid_p=nullptr;
+extern grid_type grid;
+cl::sycl::buffer<int,1> *number_of_states_p=nullptr;
+extern int number_of_states;
+cl::sycl::buffer<state_type,1> *states_p=nullptr;
+extern state_type *states;
+cl::sycl::buffer<int,1> *g_circ_p=nullptr;
+extern int g_circ;
+cl::sycl::buffer<int,1> *g_point_p=nullptr;
+extern int g_point;
+cl::sycl::buffer<int,1> *g_rect_p=nullptr;
+extern int g_rect;
+cl::sycl::buffer<double,1> *dt_p=nullptr;
+extern double dt;
+
+void ops_init_backend() {}
+
+void ops_decl_const_char(OPS_instance *instance, int dim, char const * type, int size, char * dat, char const * name ) {
+    if (!strcmp(name,"g_small")) {
+        if (g_small_p == nullptr) g_small_p = new cl::sycl::buffer<double,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*g_small_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((double*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"g_big")) {
+        if (g_big_p == nullptr) g_big_p = new cl::sycl::buffer<double,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*g_big_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((double*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"dtc_safe")) {
+        if (dtc_safe_p == nullptr) dtc_safe_p = new cl::sycl::buffer<double,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*dtc_safe_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((double*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"dtu_safe")) {
+        if (dtu_safe_p == nullptr) dtu_safe_p = new cl::sycl::buffer<double,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*dtu_safe_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((double*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"dtv_safe")) {
+        if (dtv_safe_p == nullptr) dtv_safe_p = new cl::sycl::buffer<double,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*dtv_safe_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((double*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"dtdiv_safe")) {
+        if (dtdiv_safe_p == nullptr) dtdiv_safe_p = new cl::sycl::buffer<double,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*dtdiv_safe_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((double*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"field")) {
+        if (field_p == nullptr) field_p = new cl::sycl::buffer<field_type,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*field_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((field_type*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"grid")) {
+        if (grid_p == nullptr) grid_p = new cl::sycl::buffer<grid_type,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*grid_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((grid_type*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"number_of_states")) {
+        if (number_of_states_p == nullptr) number_of_states_p = new cl::sycl::buffer<int,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*number_of_states_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((int*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"states")) {
+        if (states_p == nullptr) states_p = new cl::sycl::buffer<state_type,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*states_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((state_type*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"g_circ")) {
+        if (g_circ_p == nullptr) g_circ_p = new cl::sycl::buffer<int,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*g_circ_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((int*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"g_point")) {
+        if (g_point_p == nullptr) g_point_p = new cl::sycl::buffer<int,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*g_point_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((int*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"g_rect")) {
+        if (g_rect_p == nullptr) g_rect_p = new cl::sycl::buffer<int,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*g_rect_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((int*)dat)[d];
+        }
+    }
+    else
+    if (!strcmp(name,"dt")) {
+        if (dt_p == nullptr) dt_p = new cl::sycl::buffer<double,1>(cl::sycl::range<1>(dim));
+        auto accessor = (*dt_p).get_access<cl::sycl::access::mode::write>();
+        for (int d = 0; d < dim; d++) {
+            accessor[d] = ((double*)dat)[d];
+        }
+    }
+    else
+    {
+        throw OPSException(OPS_RUNTIME_ERROR, "error: unknown const name");
+    }
+}
+
+//user kernel files
+#include "PdV_kernel_predict_kernel.cpp"
+#include "PdV_kernel_nopredict_kernel.cpp"
+#include "accelerate_kernel_kernel.cpp"
+#include "advec_cell_kernel1_xdir_kernel.cpp"
+#include "advec_cell_kernel2_xdir_kernel.cpp"
+#include "advec_cell_kernel3_xdir_kernel.cpp"
+#include "advec_cell_kernel4_xdir_kernel.cpp"
+#include "advec_cell_kernel1_ydir_kernel.cpp"
+#include "advec_cell_kernel2_ydir_kernel.cpp"
+#include "advec_cell_kernel3_ydir_kernel.cpp"
+#include "advec_cell_kernel4_ydir_kernel.cpp"
+#include "advec_mom_kernel_x1_kernel.cpp"
+#include "advec_mom_kernel_y1_kernel.cpp"
+#include "advec_mom_kernel_x2_kernel.cpp"
+#include "advec_mom_kernel_y2_kernel.cpp"
+#include "advec_mom_kernel_mass_flux_x_kernel.cpp"
+#include "advec_mom_kernel_post_pre_advec_x_kernel.cpp"
+#include "advec_mom_kernel1_x_nonvector_kernel.cpp"
+#include "advec_mom_kernel2_x_kernel.cpp"
+#include "advec_mom_kernel_mass_flux_y_kernel.cpp"
+#include "advec_mom_kernel_post_pre_advec_y_kernel.cpp"
+#include "advec_mom_kernel1_y_nonvector_kernel.cpp"
+#include "advec_mom_kernel2_y_kernel.cpp"
+#include "calc_dt_kernel_kernel.cpp"
+#include "calc_dt_kernel_min_kernel.cpp"
+#include "calc_dt_kernel_get_kernel.cpp"
+#include "../mpi_openmp/calc_dt_kernel_print_kernel.cpp"
+#include "field_summary_kernel_kernel.cpp"
+#include "flux_calc_kernelx_kernel.cpp"
+#include "flux_calc_kernely_kernel.cpp"
+#include "generate_chunk_kernel_kernel.cpp"
+#include "ideal_gas_kernel_kernel.cpp"
+#include "initialise_chunk_kernel_xx_kernel.cpp"
+#include "initialise_chunk_kernel_yy_kernel.cpp"
+#include "initialise_chunk_kernel_x_kernel.cpp"
+#include "initialise_chunk_kernel_y_kernel.cpp"
+#include "initialise_chunk_kernel_cellx_kernel.cpp"
+#include "initialise_chunk_kernel_celly_kernel.cpp"
+#include "initialise_chunk_kernel_volume_kernel.cpp"
+#include "reset_field_kernel1_kernel.cpp"
+#include "reset_field_kernel2_kernel.cpp"
+#include "revert_kernel_kernel.cpp"
+#include "update_halo_kernel1_b2_kernel.cpp"
+#include "update_halo_kernel1_b1_kernel.cpp"
+#include "update_halo_kernel1_t2_kernel.cpp"
+#include "update_halo_kernel1_t1_kernel.cpp"
+#include "update_halo_kernel1_l2_kernel.cpp"
+#include "update_halo_kernel1_l1_kernel.cpp"
+#include "update_halo_kernel1_r2_kernel.cpp"
+#include "update_halo_kernel1_r1_kernel.cpp"
+#include "update_halo_kernel2_xvel_plus_4_a_kernel.cpp"
+#include "update_halo_kernel2_xvel_plus_2_a_kernel.cpp"
+#include "update_halo_kernel2_xvel_plus_4_b_kernel.cpp"
+#include "update_halo_kernel2_xvel_plus_2_b_kernel.cpp"
+#include "update_halo_kernel2_xvel_minus_4_a_kernel.cpp"
+#include "update_halo_kernel2_xvel_minus_2_a_kernel.cpp"
+#include "update_halo_kernel2_xvel_minus_4_b_kernel.cpp"
+#include "update_halo_kernel2_xvel_minus_2_b_kernel.cpp"
+#include "update_halo_kernel2_yvel_minus_4_a_kernel.cpp"
+#include "update_halo_kernel2_yvel_minus_2_a_kernel.cpp"
+#include "update_halo_kernel2_yvel_minus_4_b_kernel.cpp"
+#include "update_halo_kernel2_yvel_minus_2_b_kernel.cpp"
+#include "update_halo_kernel2_yvel_plus_4_a_kernel.cpp"
+#include "update_halo_kernel2_yvel_plus_2_a_kernel.cpp"
+#include "update_halo_kernel2_yvel_plus_4_b_kernel.cpp"
+#include "update_halo_kernel2_yvel_plus_2_b_kernel.cpp"
+#include "update_halo_kernel3_plus_4_a_kernel.cpp"
+#include "update_halo_kernel3_plus_2_a_kernel.cpp"
+#include "update_halo_kernel3_plus_4_b_kernel.cpp"
+#include "update_halo_kernel3_plus_2_b_kernel.cpp"
+#include "update_halo_kernel3_minus_4_a_kernel.cpp"
+#include "update_halo_kernel3_minus_2_a_kernel.cpp"
+#include "update_halo_kernel3_minus_4_b_kernel.cpp"
+#include "update_halo_kernel3_minus_2_b_kernel.cpp"
+#include "update_halo_kernel4_minus_4_a_kernel.cpp"
+#include "update_halo_kernel4_minus_2_a_kernel.cpp"
+#include "update_halo_kernel4_minus_4_b_kernel.cpp"
+#include "update_halo_kernel4_minus_2_b_kernel.cpp"
+#include "update_halo_kernel4_plus_4_a_kernel.cpp"
+#include "update_halo_kernel4_plus_2_a_kernel.cpp"
+#include "update_halo_kernel4_plus_4_b_kernel.cpp"
+#include "update_halo_kernel4_plus_2_b_kernel.cpp"
+#include "viscosity_kernel_kernel.cpp"

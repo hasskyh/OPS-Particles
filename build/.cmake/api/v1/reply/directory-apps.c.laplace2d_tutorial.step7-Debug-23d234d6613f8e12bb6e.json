@@ -1,0 +1,107 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"build_ops_c_sample"
+		],
+		"files" : 
+		[
+			"apps/c/CMakeLists.txt",
+			"apps/c/laplace2d_tutorial/step7/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 696,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 697,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 698,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 699,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/laplace2d",
+			"paths" : 
+			[
+				"apps/c/laplace2d_tutorial/step7/laplace2d_dev_seq.exe"
+			],
+			"targetId" : "laplace2d_dev_seq::@51eec12406333a5c8836",
+			"targetIndex" : 8,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/laplace2d",
+			"paths" : 
+			[
+				"apps/c/laplace2d_tutorial/step7/laplace2d_seq.exe"
+			],
+			"targetId" : "laplace2d_seq::@51eec12406333a5c8836",
+			"targetIndex" : 10,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/laplace2d",
+			"paths" : 
+			[
+				"apps/c/laplace2d_tutorial/step7/laplace2d_openmp.exe"
+			],
+			"targetId" : "laplace2d_openmp::@51eec12406333a5c8836",
+			"targetIndex" : 9,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/laplace2d",
+			"paths" : 
+			[
+				"apps/c/laplace2d_tutorial/step7/laplace2d_tiled.exe"
+			],
+			"targetId" : "laplace2d_tiled::@51eec12406333a5c8836",
+			"targetIndex" : 11,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "apps/c/laplace2d_tutorial/step7",
+		"source" : "apps/c/laplace2d_tutorial/step7"
+	}
+}

@@ -1,0 +1,107 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"build_ops_c_sample"
+		],
+		"files" : 
+		[
+			"apps/c/CMakeLists.txt",
+			"apps/c/PolyDisperse-Evaporating-Spray-Jet/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 696,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 697,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 698,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 699,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/pdesj",
+			"paths" : 
+			[
+				"apps/c/PolyDisperse-Evaporating-Spray-Jet/pdesj_dev_seq.exe"
+			],
+			"targetId" : "pdesj_dev_seq::@c21115e56589bd3f88e8",
+			"targetIndex" : 25,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/pdesj",
+			"paths" : 
+			[
+				"apps/c/PolyDisperse-Evaporating-Spray-Jet/pdesj_seq.exe"
+			],
+			"targetId" : "pdesj_seq::@c21115e56589bd3f88e8",
+			"targetIndex" : 27,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/pdesj",
+			"paths" : 
+			[
+				"apps/c/PolyDisperse-Evaporating-Spray-Jet/pdesj_openmp.exe"
+			],
+			"targetId" : "pdesj_openmp::@c21115e56589bd3f88e8",
+			"targetIndex" : 26,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "/OPS-APPS/pdesj",
+			"paths" : 
+			[
+				"apps/c/PolyDisperse-Evaporating-Spray-Jet/pdesj_tiled.exe"
+			],
+			"targetId" : "pdesj_tiled::@c21115e56589bd3f88e8",
+			"targetIndex" : 28,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "apps/c/PolyDisperse-Evaporating-Spray-Jet",
+		"source" : "apps/c/PolyDisperse-Evaporating-Spray-Jet"
+	}
+}
